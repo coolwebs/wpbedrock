@@ -8,9 +8,9 @@ services:
       - '443:443'
     volumes:
       - ./src:/var/www/html:rw,cached
-      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./config/php.ini:/usr/local/etc/php/php.ini
       - ./sites-enabled:/etc/apache2/sites-enabled
-      - apache-logs:/var/log/apache2
+      - ./config/apache-logs:/var/log/apache2
       - ./certs:/etc/certs
     depends_on:
       - wordpress
